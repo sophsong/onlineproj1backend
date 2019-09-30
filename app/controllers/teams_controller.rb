@@ -10,5 +10,10 @@ class TeamsController < ApplicationController
     render json: @team.to_json
   end
 
+  def players
+    @team = Team.find(params[:id])
+    render json: @team.players.to_json
+  end
+
 
 end
